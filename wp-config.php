@@ -80,7 +80,14 @@ $table_prefix  = 'phV_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', false); /*VOLVER A PONER */
+/*define('WP_DEBUG', true); //**activar los logs
+define('WP_DEBUG_LOG', true);
+define('WP_DEBUG_DISPLAY', false);*/
+
+
+define('UPLOAD_MAX_SIZE', '256M');
+define('POST_MAX_SIZE', '256M');
 
 /* That's all, stop editing! Happy blogging. */
 

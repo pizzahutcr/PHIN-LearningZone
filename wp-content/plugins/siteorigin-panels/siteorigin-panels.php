@@ -20,7 +20,8 @@ define( 'SITEORIGIN_PANELS_CSS_SUFFIX', '.min' );
 require_once plugin_dir_path( __FILE__ ) . 'inc/functions.php';
 
 class SiteOrigin_Panels {
-
+	
+	private $container; //**se Agrega esta línea
 	function __construct() {
 		register_activation_hook( __FILE__, array( 'SiteOrigin_Panels', 'activate' ) );
 

@@ -4,8 +4,9 @@ class SwpmStripeSCABuyNowIpnHandler {
 
 	public function __construct() {
 		//check if this is session create request
-		if ( wp_doing_ajax() ) {
-			$action = filter_input( INPUT_POST, 'action', FILTER_SANITIZE_STRING );
+		if ( wp_doing_ajax() ) {			
+			//$action = filter_input( INPUT_POST, 'action', FILTER_SANITIZE_STRING );//**se comenta ya q está deprecada
+			$action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_SPECIAL_CHARS);//**se cambia x esta
 			if ( 'swpm_stripe_sca_create_checkout_session' === $action ) {
 				add_action( 'wp_ajax_swpm_stripe_sca_create_checkout_session', array( $this, 'handle_session_create' ) );
 				add_action( 'wp_ajax_nopriv_swpm_stripe_sca_create_checkout_session', array( $this, 'handle_session_create' ) );

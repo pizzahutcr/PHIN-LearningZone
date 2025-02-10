@@ -11,7 +11,8 @@ abstract class SwpmProtectionBase {
     protected $custom_posts;
     protected $details;
     protected $options;
-
+	private $owning_level_id; //**se Agrega esta línea
+	private $disable_bookmark; //**se Agrega esta línea
     private function __construct() {
 
     }
